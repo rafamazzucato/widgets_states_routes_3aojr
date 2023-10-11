@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:widgets_states_routes_3aojr/home.dart';
+import 'package:widgets_states_routes_3aojr/screens/form.dart';
+import 'package:widgets_states_routes_3aojr/screens/home.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +18,11 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
         useMaterial3: true,
       ),
-      home: const HomeLanguagesWidget(),
+      routes: {
+        "/" : (context) => const HomeLanguagesWidget(),
+        "/add" : (context) => LanguageFormWidget(),
+      },
+      initialRoute: "/",
     );
   }
 }
